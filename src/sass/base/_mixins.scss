@@ -1,0 +1,35 @@
+@mixin breakpoint($point) {
+  @if $point == tablet {
+    @media (min-width: $screen-tablet) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media (min-width: $screen-mobile) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: $screen-mobile) {
+      @content;
+    }
+  }
+}
+
+@mixin hover {
+  &:hover,
+  &:focus {
+    @content
+  }
+}
+
+@mixin disabled {
+  &:disabled,
+  &[disabled] {
+    @content
+  }
+}
+
+@mixin small-heading {
+  color: $gray;
+  font-size: 1rem;
+  text-transform: uppercase;
+}

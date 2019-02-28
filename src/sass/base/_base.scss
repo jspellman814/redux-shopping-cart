@@ -1,0 +1,88 @@
+@import "variables";
+@import "mixins";
+
+html {
+  background: $owhite;
+  color: $text_color;
+  font-family: Arial, sans-serif;
+  font-size:10px; // sets 10px = 1rem
+}
+
+body {
+  font-size:1.6rem;
+  margin: 0;
+}
+
+hr {
+  border: 0.4px solid $ltgray;
+  margin: 2rem 0;
+}
+
+h1 {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size:1.8rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  @include breakpoint(mobile) {
+    font-size:2rem;
+  }
+  @include breakpoint(tablet) {
+    font-size:2.8rem;
+  }
+}
+
+p {
+  margin:0 0 3rem;
+}
+
+a {
+  color: $text_color;
+
+  @include hover {
+    color: $dkblue;
+  }
+
+  &.disabled {
+    opacity: 0.3;
+    @include hover {
+      color: $text_color;
+    }
+  }
+}
+
+button {
+  background: $blue;
+  border: none;
+  border-radius: 3rem;
+  color: $white;
+  cursor: pointer;
+  padding: 0.7rem 1.6rem;
+  text-transform: uppercase;
+
+  &.add {
+    @include breakpoint(mobile) {
+      margin-top: 1.5rem;
+    }
+    @include breakpoint(tablet) {
+      margin-top: 3rem;
+    }
+  }
+
+  @include hover {
+    background: $dkblue;
+  }
+
+  @include disabled {
+    opacity: 0.3;
+  }
+
+}
+
+#root {
+  margin: 0 auto;
+  max-width: 85%;
+}

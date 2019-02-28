@@ -1,10 +1,11 @@
 import React from 'react'
 import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
+import './../sass/App.scss'
 
 const App = () => (
   <div>
-    <h2>Shopping Cart Example</h2>
+    <h1>Acme Store</h1>
     <hr/>
     <ProductsContainer />
     <hr/>
