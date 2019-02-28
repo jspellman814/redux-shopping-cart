@@ -1,15 +1,15 @@
 import React from 'react'
 import ProductsContainer from './ProductsContainer'
-import CartContainer from './CartContainer'
-import './../sass/App.scss'
+import Modal from './Modal'
 
 const App = () => (
   <div>
-    <h1>Acme Store</h1>
+    <header>
+      <h1>Acme Store</h1>
+      <Modal />
+    </header>
     <hr/>
     <ProductsContainer />
-    <hr/>
-    <CartContainer />
   </div>
 )
 
