@@ -10,6 +10,7 @@ html {
 
 body {
   font-size:1.6rem;
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -80,9 +81,19 @@ button {
     opacity: 0.3;
   }
 
+  &.link {
+    background: none;
+    color: $text_color;
+    text-transform: none;
+
+    @include hover {
+      color: $blue;
+    }
+  }
+
 }
 
 #root {
   margin: 0 auto;
-  max-width: 85%;
+  max-width: 90%;
 }

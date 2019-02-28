@@ -1,0 +1,12 @@
+header {
+  margin-top: 1em;
+  @include breakpoint(mobile) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+}

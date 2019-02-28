@@ -1,0 +1,121 @@
+// cart-related theming
+.cart {
+  &__checkout {
+    bottom: 0;
+    border-radius: 0;
+    font-size: 1.4rem;
+    left: 0;
+    padding: 1.5rem;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__close {
+    position: absolute;
+    right: 20px;
+    text-decoration: none;
+    top: 20px;
+  }
+
+  &__no-products {
+    color: $gray;
+    text-align: center;
+    svg path {
+      fill: $secondary_text_color;
+    }
+  }
+
+  &__open {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    text-decoration: none;
+    @include hover {
+      svg path {
+        fill: $blue;
+      }
+    }
+    svg {
+      margin-right: 1rem;
+    }
+  }
+
+  &__total {
+    display: flex;
+    border-top: 0.4px solid $ltgray;
+    justify-content: space-between;
+    padding-top: 4.5rem;
+    margin-top: 4.5rem;
+  }
+
+  &--empty {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .cart__nodes {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 24em;
+    }
+  }
+
+  .label {
+    color: $secondary_text_color;
+  }
+
+  hr {
+    margin: 1.5rem 0;
+  }
+
+  .product__details {
+    display: block;
+    margin-top: 2rem;
+    @include breakpoint(tablet) {
+      margin-top: 3.5rem;
+    }
+
+    .product__title {
+      @include breakpoint(tablet) {
+        font-size: 2rem;
+      }
+    }
+
+    .product__inventory {
+      display: none;
+    }
+
+    .product__price {
+      color: $dkgray;
+      font-size: 1.4rem;
+      @include breakpoint(tablet) {
+        font-size: inherit;
+      }
+    }
+  }
+
+}
+
+.ReactModal {
+  //override defaults
+  &__Overlay {
+    background-color: rgba(225, 226, 228, 1) !important;
+  }
+  &__Content {
+    border-radius: 0 !important;
+    padding: 40px 20px !important;
+
+    @include breakpoint(mobileonly){
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      top: 0 !important;
+    }
+
+    @include breakpoint(mobile) {
+      border-radius: 10px !important;
+      padding: 40px !important;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
+import Icon from './SVGIcon'
 
 const Cart  = ({ products, total, onCheckoutClicked }) => {
   const hasProducts = products.length > 0
@@ -14,18 +15,29 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
       />
     )
   ) : (
-    <em>Please add some products to cart.</em>
+    <div className="cart__no-products">
+      <Icon width={70} /><br/>
+      Please add some products<br/>
+      to your cart.</div>
   )
 
   return (
-    <div>
+    <div className={hasProducts ? 'cart' : 'cart cart--empty'}>
       <h3>Your Cart</h3>
-      <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <button onClick={onCheckoutClicked}
-        disabled={hasProducts ? '' : 'disabled'}>
-        Checkout
-      </button>
+      <hr />
+      <div className="cart__nodes">{nodes}</div>
+      { hasProducts ? (
+        <div className="cart__total">
+          <div className="label">Total</div>
+            <div className="price">&#36;{total}</div>
+        </div>
+      ) : '' }
+      { hasProducts ? (
+        <button className="cart__checkout" onClick={onCheckoutClicked}
+          disabled={hasProducts ? '' : 'disabled'}>
+          Checkout
+        </button>
+      ) : '' }
     </div>
   )
 }
