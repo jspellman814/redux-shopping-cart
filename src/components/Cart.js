@@ -10,7 +10,7 @@ const Cart  = ({ products, total, onCheckoutClicked }) => {
       <Product
         title={product.title}
         price={product.price}
-        quantity={product.quantity}
+        inventory={product.inventory}
         key={product.id}
       />
     )

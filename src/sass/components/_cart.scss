@@ -69,29 +69,39 @@
     margin: 1.5rem 0;
   }
 
-  .product__details {
-    display: block;
-    margin-top: 2rem;
-    @include breakpoint(tablet) {
-      margin-top: 3.5rem;
+  .product {
+    &__cart-inventory {
+      display: flex;
     }
 
-    .product__title {
+    &__details {
+      display: block;
+      margin-top: 2rem;
       @include breakpoint(tablet) {
-        font-size: 2rem;
+        margin-top: 3.5rem;
       }
     }
 
-    .product__inventory {
+    &__inventory {
       display: none;
     }
 
-    .product__price {
+    &__price {
       color: $dkgray;
       font-size: 1.4rem;
       @include breakpoint(tablet) {
         font-size: inherit;
       }
+    }
+
+    &__title {
+      @include breakpoint(tablet) {
+        font-size: 2rem;
+      }
+    }
+
+    &__remove {
+      display: block;
     }
   }
 

@@ -1,0 +1,91 @@
+.product {
+  background: $white;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 2rem 1.5rem;
+  @include breakpoint(mobile) {
+    margin-bottom: 2rem;
+    padding: 2.6rem 3.4rem;
+  }
+
+  &__cart-inventory {
+    display: none;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+
+    span,
+    button {
+      width: 33%;
+    }
+
+    span {
+      border-bottom: 2px solid $buttonowhite;
+      border-top: 2px solid $buttonowhite;
+      display: inline-block;
+      height: 3.6rem;
+      line-height: 4rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    button {
+      background-color: $buttonowhite;
+      border: 0;
+      border-radius: 0;
+      color: $buttongray;
+      font-size: 3rem;
+      height: 4rem;
+      padding: 0;
+      text-align: center;
+      vertical-align: middle;
+
+      &.product-add {
+        border-bottom-right-radius: 3rem;
+        border-top-right-radius: 3rem;
+      }
+
+      &.product-subtract {
+        border-bottom-left-radius: 3rem;
+        border-top-left-radius: 3rem;
+      }
+
+      @include hover {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__inventory {
+    @include small-heading;
+  }
+
+  &__price {
+    + .product__remove {
+      margin-top: 2rem;
+    }
+  }
+
+  &__remove {
+    background: none;
+    color: $red;
+    display: none;
+    font-size: 1.4rem;
+    padding: 0;
+    text-transform: none;
+
+    @include hover {
+      background: none;
+      color: $red;
+    }
+  }
+
+}

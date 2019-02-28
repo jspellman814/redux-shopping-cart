@@ -9,6 +9,12 @@ const Product = ({ price, inventory, title }) => (
     </div>
     <div className="product__detail--col-2">
       <div className="product__price">${price}</div>
+      <button className="product__remove">Remove</button>
+    </div>
+    <div className="product__cart-inventory">
+      <button className="product-subtract">-</button>
+      <span className="number">{inventory}</span>
+      <button className="product-add">+</button>
     </div>
   </div>
 )

@@ -29,7 +29,7 @@ class Modal extends React.Component {
         return (
             <div className="cart__link">
                 <button className="link cart__open" onClick={this.handleOpenModal}>
-                    <Icon width={18} /> Your cart is empty
+                    <Icon width={18} /> View cart
                 </button>
                 <ReactModal
                     isOpen={this.state.showModal}>
